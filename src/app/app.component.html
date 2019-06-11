@@ -12,10 +12,10 @@
 </div>
 <div class="container" >
     <ul>
-      <div *ngFor="let task of tasks; let i = index" [attr.data-index]="i" (click)="finishTask()" >
+      <div *ngFor="let task of tasks; let i = index">
         <input class="cross" type="checkbox" value="1">
         <span>{{ task }}</span>
-        <button type="button" class="btn btn-danger" (click)="deleteTask()"> Delete </button>
+        <button type="button" class="btn btn-danger" (click)="deleteTask(i)" style="align-items: flex-end"> Delete </button>
       </div>
     </ul>
 </div>

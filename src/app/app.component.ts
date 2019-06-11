@@ -10,9 +10,7 @@ export class AppComponent {
   newTask: string;
   taskErrorMessage = false;
   tasks = [];
-  delTask: string;
   i: number;
-  finTask = false;
 
   addTask(){
     if(this.newTask){
@@ -26,11 +24,8 @@ export class AppComponent {
     }
   }
   
-  deleteTask(){
-    this.tasks.splice(this.i,1);
+  deleteTask(i){
+    this.tasks.splice(i,1);
   }
 
-  finishTask(){
-    
-  }
 }
