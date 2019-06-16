@@ -11,6 +11,8 @@ export class AppComponent {
   taskErrorMessage = false;
   tasks = [];
   i: number;
+  isEdit = false;
+  index: number;
 
   addTask(){
     if(this.newTask){
@@ -24,8 +26,19 @@ export class AppComponent {
     }
   }
   
-  deleteTask(i){
+  deleteTask(i) {
     this.tasks.splice(i,1);
   }
 
+  editTask(task, i) {
+    this.newTask = task;
+    this.isEdit = true;
+    this.index = i;
+  }
+
+  saveTask() {
+    this.tasks[this.index] = this.newTask;
+    this.newTask = '';
+    this.isEdit = false;
+  }
 }
